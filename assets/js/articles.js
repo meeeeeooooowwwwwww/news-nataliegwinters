@@ -19,7 +19,7 @@ function getArticleUrl(slug) {
 }
 
 function renderArticles(articles) {
-    const articlesList = document.getElementById('articles-list');
+    const articlesList = document.getElementById('warroom-articles');
     if (!articlesList) return;
     
     // Remove loading message if it exists
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
     } catch (error) {
         console.error('Error loading articles:', error);
-        const articlesList = document.getElementById('articles-list');
+        const articlesList = document.getElementById('warroom-articles');
         if (articlesList) {
             articlesList.innerHTML = `
                 <div class="error">
