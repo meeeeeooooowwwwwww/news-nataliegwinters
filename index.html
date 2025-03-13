@@ -25,27 +25,28 @@
 	<meta name="twitter:image" content="https://nataliegwinters.com/assets/images/social-header.jpg" />
 	-->
 	<meta name="description"
-		content="Latest news and articles from Natalie Winters - investigative reporter and White House correspondent." />
+		content="Latest news and investigative reporting from Natalie Winters - White House Correspondent and investigative journalist." />
 	<meta property="og:title"
-		content="Natalie Winters – Investigative Journalist, White House Press Correspondent & Political Commentator" />
+		content="News - Natalie Winters" />
 	<meta property="og:description"
-		content="Explore this Natalie Winters' website. Read her investigative journalism, media appearances, and expert analysis on politics, media, and business. A trusted White House Press Correspondent." />
+		content="Breaking news, investigative journalism, and in-depth reporting from Natalie Winters." />
 	<!-- Production tags commented out for local testing
 	<meta property="og:url" content="https://nataliegwinters.com" />
 	<meta property="og:image" content="https://nataliegwinters.com/assets/images/social-header.jpg" />
 	-->
-	<meta property="og:type" content="profile" />
+	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Natalie Winters – Investigative Journalist & White House Press Correspondent" />
+	<meta name="twitter:title" content="News - Natalie Winters" />
 	<meta name="twitter:description"
-		content="Natalie Winters is a leading Investigative Journalist and White House Press Correspondent offering sharp insights on media, politics, and business." />
+		content="Breaking news, investigative journalism, and in-depth reporting from Natalie Winters." />
 	<!-- Production tags commented out for local testing
 	<meta name="twitter:image" content="https://nataliegwinters.com/assets/images/social-header.jpg" />
 	-->
 	<meta name="robots" content="index, follow" />
 	<link rel="icon" type="image/icon" href="/favicon.ico">
-	<link rel="stylesheet" href="/assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/fontawesome-all.min.css" />
+	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/noscript.css" /></noscript>
 	<!-- Production scripts commented out for local testing
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11453931686"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5484279509355787" crossorigin="anonymous"></script>
@@ -72,6 +73,7 @@
 				<ul>
 					<li><a href="/">Home</a></li>
 					<li><a href="/warroom-articles.html">War Room Articles</a></li>
+					<li><a href="/us/">US News</a></li>
 					<li><a href="https://warroom.org/contact/" target="_blank" rel="noopener noreferrer">Contact</a></li>
 				</ul>
 			</nav>
@@ -85,7 +87,8 @@
 					<p>Breaking stories and investigative reports</p>
 				</header>
 				<div id="latest-articles">
-					<!-- Articles will be loaded here -->
+					<!-- Articles will be loaded here dynamically -->
+					<div class="loading">Loading latest articles...</div>
 				</div>
 			</article>
 		</div>
@@ -121,14 +124,15 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="/assets/js/jquery.min.js"></script>
-	<script src="/assets/js/jquery.dropotron.min.js"></script>
-	<script src="/assets/js/jquery.scrolly.min.js"></script>
-	<script src="/assets/js/jquery.scrollex.min.js"></script>
-	<script src="/assets/js/browser.min.js"></script>
-	<script src="/assets/js/breakpoints.min.js"></script>
-	<script src="/assets/js/util.js"></script>
-	<script src="/assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.dropotron.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/browser.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/breakpoints.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/util.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/main.js"></script>
+	<script src="/assets/js/articles.js"></script>
 
 </body>
 
