@@ -1,3 +1,4 @@
-# Ensure rewrite preserves URL path and handle 404s
-/warroom-articles/* /article.html 200!
-/* /404.html 404
+# Route all paths through index.html for client-side routing
+/warroom-articles/* /index.html 200!
+/article/*          /index.html 200!
+/*                  /index.html 200!
