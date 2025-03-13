@@ -365,4 +365,35 @@ body.is-preload .fa-mug-hot:hover:before {
     height: 100%;
     background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
     z-index: 1;
+}
+
+#navPanel {
+    background: var(--primary-color) !important;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+#navPanel nav {
+    padding: 0.5em 1em;
+}
+
+#navPanel .link {
+    color: var(--text-light) !important;
+    border-top: solid 1px rgba(255, 255, 255, 0.1) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#navPanel .link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--accent-color) !important;
+}
+
+#navPanel .link:first-child {
+    border-top: 0 !important;
+}
+
+/* Override any default background colors */
+body.is-preload #navPanel,
+#navPanel {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
 } 
