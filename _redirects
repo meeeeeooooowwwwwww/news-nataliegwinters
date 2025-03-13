@@ -1,1 +1,2 @@
-/warroom-articles/* /article.html 200
+# Ensure rewrite preserves URL path
+/warroom-articles/* /article.html 200!

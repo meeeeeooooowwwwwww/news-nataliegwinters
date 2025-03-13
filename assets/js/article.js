@@ -18,11 +18,17 @@ function getArticleId() {
     const pathname = window.location.pathname;
     console.log('Current pathname:', pathname);
     
-    // Match either /warroom-articles/slug or /article/slug
+    // Match /warroom-articles/[slug] or /article/[slug]
     const match = pathname.match(/\/(warroom-articles|article)\/(.+)/);
     if (match) {
         console.log('Found article ID from URL:', match[2]);
         return decodeURIComponent(match[2]);
+    }
+
+    // Fallback: If only /article, log and return null
+    if (pathname === '/article') {
+        console.log('URL is /article with no slug, likely a redirect issue');
+        return null;
     }
     
     console.log('No article ID found in URL or query parameters');
@@ -32,20 +38,28 @@ function getArticleId() {
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const articleId = getArticleId();
+        console.log('Extracted articleId:', articleId);
         
         if (!articleId) {
-            throw new Error('Article not found');
+            throw new Error('Article not found - no valid ID extracted');
         }
 
         // Load the articles JSON
         const response = await fetch('/warroom-articles.json');
-        const articles = await response.json();
+        console.log('JSON fetch status:', response.status);
+        if (!response.ok) {
+            throw new Error('Failed to load articles data');
+        }
         
+        const articles = await response.json();
+        console.log('Loaded articles count:', articles.length);
+
         // Find the article by matching its slug with the URL slug
         const article = articles.find(a => generateSlug(a.title) === articleId);
+        console.log('Matched article:', article ? article.title : 'none');
         
         if (!article) {
-            throw new Error('Article not found');
+            throw new Error(`Article not found for slug: ${articleId}`);
         }
 
         // Format the date
@@ -78,12 +92,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
 
     } catch (error) {
-        console.error('Error loading article:', error);
+        console.error('Error loading article:', error.message);
         const articleContent = document.getElementById('article-content');
         articleContent.innerHTML = `
             <div class="error">
                 <h2>Article Not Found</h2>
-                <p>Sorry, we couldn't find the article you're looking for.</p>
+                <p>${error.message}</p>
                 <a href="/warroom-articles.html" class="back-to-articles"><em>→</em> Back to Articles</a>
             </div>
         `;
