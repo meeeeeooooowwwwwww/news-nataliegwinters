@@ -22,11 +22,11 @@ function getArticleId() {
 
     const pathname = window.location.pathname;
     console.log('Attempting to match pathname:', pathname);
-    const match = pathname.match(/\/(warroom-articles|article)\/(.+)/);
+    const match = pathname.match(/\/warroom-articles\/(.+)/);
     if (match) {
         console.log('Matched path parts:', match);
-        console.log('Using slug from URL:', match[2]);
-        return decodeURIComponent(match[2]);
+        console.log('Using slug from URL:', match[1]);
+        return decodeURIComponent(match[1]);
     }
 
     console.log('No slug found in URL');
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="article-body">
                 ${article.content}
             </div>
-            <a href="/warroom.html" class="back-to-articles"><em>→</em> Back to Articles</a>
+            <a href="/warroom-articles.html" class="back-to-articles"><em>→</em> Back to Articles</a>
         `;
         console.log('Article rendered successfully');
 
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="error">
                 <h2>Article Not Found</h2>
                 <p>${error.message}</p>
-                <a href="/warroom.html" class="back-to-articles"><em>→</em> Back to Articles</a>
+                <a href="/warroom-articles.html" class="back-to-articles"><em>→</em> Back to Articles</a>
             </div>
         `;
     }

@@ -10,12 +10,7 @@ function generateSlug(title) {
 }
 
 function getArticleUrl(slug) {
-    // Use clean URLs in production, query parameters in development
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return `/article.html?id=${encodeURIComponent(slug)}`;
-    } else {
-        return `/warroom-articles/${encodeURIComponent(slug)}`;
-    }
+    return `/warroom-articles/${encodeURIComponent(slug)}`;
 }
 
 function renderArticles(articles) {
