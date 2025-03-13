@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="article-body">
                 ${article.content}
             </div>
-            <a href="/warroom-articles.html" class="back-to-articles"><em>→</em> Back to Articles</a>
+            <a href="/warroom.html" class="back-to-articles"><em>→</em> Back to Articles</a>
         `;
         console.log('Article rendered successfully');
 
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="error">
                 <h2>Article Not Found</h2>
                 <p>${error.message}</p>
-                <a href="/warroom-articles.html" class="back-to-articles"><em>→</em> Back to Articles</a>
+                <a href="/warroom.html" class="back-to-articles"><em>→</em> Back to Articles</a>
             </div>
         `;
     }

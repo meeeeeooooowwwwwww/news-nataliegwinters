@@ -18,7 +18,7 @@
 - `index.html` - Main homepage
 - `article.html` - Article template page
 - `warroom-articles.html` - War Room articles listing
-- `warroom-articles.json` - Article data
+- `warroom-feed.json` - Article data
 - `assets/` - CSS, JavaScript, and other assets
 
 ## Development Workflow
