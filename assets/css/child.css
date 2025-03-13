@@ -148,6 +148,15 @@ a:hover {
     text-decoration: none;
 }
 
+/* Links within paragraphs */
+p a, p strong {
+    color: var(--primary-color) !important;
+}
+
+p a:hover {
+    color: var(--accent-color) !important;
+}
+
 /* Buttons */
 .button {
     background-color: var(--accent-color);
@@ -443,8 +452,14 @@ html body #nav ul li a:hover span {
 }
 
 /* Heading Styles */
-h1, h2 {
+h1, h2, h3 {
     color: var(--primary-blue) !important;
+}
+
+/* Strong text styles */
+strong {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
 }
 
 h1 a {
@@ -489,4 +504,21 @@ h2 span.label {
 /* Contact section header */
 .contact header h3 {
     color: var(--primary-blue) !important;
+}
+
+/* Additional h3 styles */
+.post header h3 a {
+    color: var(--primary-blue) !important;
+}
+
+.post header h3 a:hover {
+    color: var(--secondary-blue) !important;
+}
+
+#footer .post.stub header h3 a {
+    color: var(--primary-blue) !important;
+}
+
+#footer .post.stub header h3 a:hover {
+    color: var(--secondary-blue) !important;
 } 
