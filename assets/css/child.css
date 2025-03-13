@@ -326,4 +326,43 @@ body.is-preload .fa-mug-hot:hover:before {
 
 .icon.brands:hover {
     color: var(--accent-color) !important;
+}
+
+.inner {
+    position: relative;
+    z-index: 2;
+    margin-top: 4em;
+}
+
+.inner header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2em;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.inner header h1 a {
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+}
+
+.inner header p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+#header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+    z-index: 1;
 } 
