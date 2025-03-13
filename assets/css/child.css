@@ -1,0 +1,329 @@
+/* Child theme for Natalie Winters News */
+/* This CSS file overrides the main theme colors */
+
+:root {
+    /* Primary Colors */
+    --primary-color: #1E3A8A;          /* Trustworthy Blue - main brand color */
+    --secondary-color: #60A5FA;        /* Soft Sky Blue - friendly accent */
+    --accent-color: #2DD4BF;           /* Playful Teal - fun elements */
+    
+    /* Text Colors */
+    --text-primary: #1F2937;           /* Dark Gray - main text */
+    --text-secondary: #4B5563;         /* Medium Gray - secondary text */
+    --text-light: #FFFFFF;             /* Crisp White - light text */
+    
+    /* Background Colors */
+    --bg-primary: #FFFFFF;             /* Crisp White - main background */
+    --bg-secondary: #F3F4F6;           /* Light Gray - secondary background */
+    --bg-dark: #1E3A8A;               /* Trustworthy Blue - dark sections */
+    
+    /* Border & Accent Colors */
+    --border-light: #D1D5DB;          /* Warm Gray - subtle borders */
+    --border-medium: #60A5FA;         /* Soft Sky Blue - medium emphasis */
+    --border-dark: #1E3A8A;           /* Trustworthy Blue - strong borders */
+    --accent-pop: #F87171;            /* Bright Coral - special highlights */
+}
+
+/* Header Styles */
+#header {
+    background-color: var(--bg-dark);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* Override header background during preload */
+body.is-preload #header:after {
+    background: var(--bg-dark) !important;
+    opacity: 1 !important;
+}
+
+body.homepage.is-preload #header:after {
+    background: var(--bg-dark) !important;
+    opacity: 0.85 !important;
+}
+
+/* Ensure smooth transition after preload */
+#header:after {
+    background: var(--bg-dark) !important;
+    transition: opacity 2.5s ease-in-out !important;
+}
+
+#header .inner h1 a {
+    color: var(--text-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+#nav {
+    background: linear-gradient(to bottom, var(--bg-dark), rgba(30, 58, 138, 0.95));
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+#nav ul li a {
+    color: var(--text-light);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#nav ul li a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content */
+.wrapper.style2 {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+article header h2 {
+    color: var(--primary-color);
+}
+
+/* Footer Styles */
+#footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border-top: 3px solid var(--accent-color);
+}
+
+#footer .label {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#footer .label:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+#footer a {
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+#footer a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Buttons */
+.button {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button.special {
+    background-color: var(--accent-pop);
+}
+
+/* Labels and Tags */
+.label {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Post Styles */
+.post {
+    border: 1px solid var(--border-light);
+    padding: 1.2em;
+    margin-bottom: 1.5em;
+    background: var(--bg-primary);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post header h3 a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.post header h3 a:hover {
+    color: var(--secondary-color);
+}
+
+.timestamp {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+/* Icons */
+.icons a {
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Additional Styles */
+hr {
+    border-color: var(--border-light);
+    margin: 2em 0;
+}
+
+.divided > li {
+    border-color: var(--border-light);
+    transition: background-color 0.3s ease;
+}
+
+.divided > li:hover {
+    background-color: rgba(96, 165, 250, 0.05);
+}
+
+/* Special Elements */
+.highlight {
+    color: var(--accent-pop);
+}
+
+.badge {
+    background-color: var(--accent-pop);
+    color: var(--text-light);
+    padding: 0.2em 0.6em;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+/* Footer Info Section Styles */
+#footer .post.stub {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+}
+
+#footer .post.stub:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+#footer .post.stub header h3 a {
+    color: var(--secondary-color);
+}
+
+#footer .post.stub header h3 a:hover {
+    color: var(--accent-color);
+}
+
+#footer .post.stub .timestamp {
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+/* Ensure divided list items in footer are transparent */
+#footer .divided > li {
+    background: transparent;
+}
+
+#footer .divided > li:hover {
+    background: transparent;
+}
+
+/* Footer Section Headers */
+#footer section header h2 .label {
+    background: transparent;
+    color: var(--secondary-color);
+    padding: 0;
+    font-weight: 600;
+}
+
+#footer section header h2 .label:hover {
+    transform: none;
+    color: var(--accent-color);
+}
+
+/* FontAwesome Icon Colors - More specific overrides */
+#footer .icons a,
+.icons a {
+    color: var(--secondary-color) !important;
+    transition: color 0.3s ease !important;
+}
+
+#footer .icons a:hover,
+.icons a:hover {
+    color: var(--accent-color) !important;
+}
+
+#footer .icons a:before,
+.icons a:before,
+.icon.brands:before,
+.fa-mug-hot:before {
+    color: var(--secondary-color) !important;
+    transition: color 0.3s ease !important;
+}
+
+#footer .icons a:hover:before,
+.icons a:hover:before,
+.icon.brands:hover:before,
+.fa-mug-hot:hover:before {
+    color: var(--accent-color) !important;
+}
+
+/* Ensure no pink colors on load */
+body.is-preload .icon.brands:before,
+body.is-preload .fa-mug-hot:before {
+    color: var(--secondary-color) !important;
+}
+
+body.is-preload .icon.brands:hover:before,
+body.is-preload .fa-mug-hot:hover:before {
+    color: var(--accent-color) !important;
+}
+
+/* Override any default icon animations */
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icon.brands {
+    text-decoration: none;
+    opacity: 1;
+    color: var(--secondary-color) !important;
+}
+
+.icon.brands:hover {
+    color: var(--accent-color) !important;
+} 
