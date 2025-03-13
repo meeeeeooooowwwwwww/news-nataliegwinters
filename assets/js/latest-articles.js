@@ -8,7 +8,7 @@ function generateSlug(title) {
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         // Load the articles JSON
-        const response = await fetch('/warroom-articles.json');
+        const response = await fetch('/warroom-feed.json');
         const articles = await response.json();
         
         // Sort articles by date (newest first) and take the latest 9

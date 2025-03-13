@@ -183,7 +183,7 @@ function renderArticles(articles) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('/warroom-articles.json');
+        const response = await fetch('/warroom-feed.json');
         allArticles = await response.json();
         
         // Sort articles by date (newest first)

@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!articleId) throw new Error('No article ID found in URL');
 
         console.log('Fetching articles JSON...');
-        const response = await fetch('/warroom-articles.json');
+        const response = await fetch('/warroom-feed.json');
         console.log('Fetch response:', response);
         console.log('Fetch status:', response.status);
         if (!response.ok) throw new Error('Failed to load articles data');
