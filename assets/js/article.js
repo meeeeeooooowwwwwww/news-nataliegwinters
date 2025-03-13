@@ -9,11 +9,23 @@ function getArticleId() {
     // Check for query parameter first (development)
     const urlParams = new URLSearchParams(window.location.search);
     const queryId = urlParams.get('id');
-    if (queryId) return queryId;
+    if (queryId) {
+        console.log('Found article ID from query parameter:', queryId);
+        return queryId;
+    }
 
     // Check for clean URL format (production)
-    const match = window.location.pathname.match(/\/warroom-articles\/(.+)/);
-    return match ? match[1] : null;
+    const pathname = window.location.pathname;
+    console.log('Current pathname:', pathname);
+    
+    const match = pathname.match(/\/warroom-articles\/(.+)/);
+    if (match) {
+        console.log('Found article ID from URL:', match[1]);
+        return match[1];
+    }
+    
+    console.log('No article ID found in URL or query parameters');
+    return null;
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
