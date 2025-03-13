@@ -11,17 +11,18 @@ function getArticleId() {
     const queryId = urlParams.get('id');
     if (queryId) {
         console.log('Found article ID from query parameter:', queryId);
-        return queryId;
+        return decodeURIComponent(queryId);
     }
 
     // Check for clean URL format (production)
     const pathname = window.location.pathname;
     console.log('Current pathname:', pathname);
     
-    const match = pathname.match(/\/warroom-articles\/(.+)/);
+    // Match either /warroom-articles/slug or /article/slug
+    const match = pathname.match(/\/(warroom-articles|article)\/(.+)/);
     if (match) {
-        console.log('Found article ID from URL:', match[1]);
-        return match[1];
+        console.log('Found article ID from URL:', match[2]);
+        return decodeURIComponent(match[2]);
     }
     
     console.log('No article ID found in URL or query parameters');
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('/warroom-articles.json');
         const articles = await response.json();
         
-        // Find the article by matching its slug
+        // Find the article by matching its slug with the URL slug
         const article = articles.find(a => generateSlug(a.title) === articleId);
         
         if (!article) {
