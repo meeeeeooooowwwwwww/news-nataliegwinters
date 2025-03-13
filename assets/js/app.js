@@ -76,6 +76,22 @@ router
                 render404();
             }
         },
+        '/warroom-articles/:slug': async ({ data }) => {
+            try {
+                const articles = await loadArticles();
+                const article = articles.find(a => {
+                    const slug = a.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    return slug === data.slug;
+                });
+                if (article) {
+                    router.navigate(`/article/${article.id}`);
+                } else {
+                    render404();
+                }
+            } catch (error) {
+                render404();
+            }
+        },
         '*': () => render404()
     })
     .resolve();
