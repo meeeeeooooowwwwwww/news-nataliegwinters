@@ -440,4 +440,53 @@ html body #nav ul li a:hover span {
     -webkit-text-decoration-style: none !important;
     border-bottom: none !important;
     position: static !important;
+}
+
+/* Heading Styles */
+h1, h2 {
+    color: var(--primary-blue) !important;
+}
+
+h1 a {
+    color: var(--primary-blue) !important;
+}
+
+h1 a:hover {
+    color: var(--secondary-blue) !important;
+}
+
+h2 span.label {
+    color: var(--primary-blue) !important;
+}
+
+/* Article specific heading styles */
+.article-item h3 {
+    color: var(--primary-blue) !important;
+}
+
+.article-item h3:hover {
+    color: var(--secondary-blue) !important;
+}
+
+/* Footer section headers */
+#footer section header h2 {
+    color: var(--primary-blue) !important;
+}
+
+#footer section header h2 span.label {
+    color: var(--primary-blue) !important;
+}
+
+/* Main content headers */
+#main header h2 {
+    color: var(--primary-blue) !important;
+}
+
+#main header p {
+    color: var(--text-dark) !important;
+}
+
+/* Contact section header */
+.contact header h3 {
+    color: var(--primary-blue) !important;
 } 
