@@ -4,7 +4,7 @@ function renderArticleList(articles) {
     const content = document.getElementById('content');
     content.innerHTML = `
         <h1>War Room Articles</h1>
-        <div id="articles-list"></div>
+        <div id="articles-list" class="grid"></div>
     `;
     const list = document.getElementById('articles-list');
     articles.slice(0, 9).forEach(article => {
@@ -38,6 +38,13 @@ function render404() {
     `;
 }
 
+function renderHomepage() {
+    document.getElementById('content').innerHTML = `
+        <h1>Welcome to Natalie Winters</h1>
+        <p><a href="/warroom-articles">View War Room Articles</a></p>
+    `;
+}
+
 let articlesData = null;
 
 async function loadArticles() {
@@ -51,22 +58,26 @@ async function loadArticles() {
 
 router
     .on({
+        '/': () => renderHomepage(),
         '/warroom-articles': async () => {
-            const articles = await loadArticles();
-            renderArticleList(articles);
-        },
-        '/article/:id': async ({ data }) => {
-            const articles = await loadArticles();
-            const article = articles.find(a => a.id === data.id);
-            if (article) {
-                renderArticle(article);
-            } else {
+            try {
+                const articles = await loadArticles();
+                renderArticleList(articles);
+            } catch (error) {
                 render404();
             }
         },
-        '*': () => {
-            // Default route (e.g., homepage)
-            document.getElementById('content').innerHTML = '<h1>Welcome</h1><p><a href="/warroom-articles">View Articles</a></p>';
-        }
+        '/article/:id': async ({ data }) => {
+            try {
+                const articles = await loadArticles();
+                const article = articles.find(a => a.id === data.id);
+                article ? renderArticle(article) : render404();
+            } catch (error) {
+                render404();
+            }
+        },
+        '*': () => render404()
     })
-    .resolve(); 
+    .resolve();
+
+document.getElementById('loading').style.display = 'none';
