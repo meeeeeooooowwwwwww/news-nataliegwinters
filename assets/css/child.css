@@ -821,4 +821,22 @@ h2 span.label {
 .article-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+ul.icons {
+    background: transparent;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+ul.icons li {
+    transition: all 0.2s ease;
+}
+
+ul.icons li:hover {
+    transform: scale(1.02);
+}
+
+ul.icons li:active {
+    transform: scale(0.98);
 } 
