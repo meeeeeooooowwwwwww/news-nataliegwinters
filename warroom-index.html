@@ -1,339 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>War Room Articles Index</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-        .metadata {
-            background: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .articles-list {
-            list-style: none;
+	<!-- Trigger new deployment -->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11453931686"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'AW-11453931686');
+	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5484279509355787"
+     crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-5484279509355787">
+	<title>War Room Articles</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="canonical" href="https://nataliegwinters.com" />
+	<meta property="og:url" content="https://nataliegwinters.com" />
+	<meta property="og:image" content="https://nataliegwinters.com/assets/images/social-header.jpg" />
+	<meta name="twitter:image" content="https://nataliegwinters.com/assets/images/social-header.jpg" />
+	<meta name="description"
+		content="Latest news and investigative reporting from Natalie Winters - White House Correspondent and investigative journalist." />
+	<meta property="og:title"
+		content="News - Natalie Winters" />
+	<meta property="og:description"
+		content="Breaking news, investigative journalism, and in-depth reporting from Natalie Winters." />
+	<meta property="og:url" content="https://nataliegwinters.com" />
+	<meta property="og:image" content="https://nataliegwinters.com/assets/images/social-header.jpg" />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="News - Natalie Winters" />
+	<meta name="twitter:description"
+		content="Breaking news, investigative journalism, and in-depth reporting from Natalie Winters." />
+	<meta name="twitter:image" content="https://nataliegwinters.com/assets/images/social-header.jpg" />
+	<meta name="robots" content="index, follow" />
+	<link rel="icon" type="image/icon" href="/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/fontawesome-all.min.css" />
+	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="/assets/css/child.css" />
+	<style>
+		#header {
+			background-image: url('/assets/images/header.png') !important;
+			background-size: cover;
+			background-position: top center;
+		}
+        .article-list {
+            margin: 0;
             padding: 0;
+            list-style: none;
         }
         .article-item {
-            background: #fff;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .article-title {
-            margin: 0 0 10px 0;
-            color: #333;
-        }
-        .article-title a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .article-title a:hover {
-            text-decoration: underline;
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .article-meta {
-            color: #666;
             font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.5em;
         }
-        .categories {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
+        .article-title {
+            margin: 0 0 0.5em 0;
         }
-        .category {
-            background: #e9ecef;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 0.8em;
+        .article-title a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: none;
         }
-        .search-box {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+        .article-title a:hover {
+            color: #e44c65;
         }
-    </style>
+        .article-excerpt {
+            margin-bottom: 1em;
+        }
+        .read-more {
+            display: inline-block;
+            background: #e44c65;
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .read-more:hover {
+            background: #d93d57;
+            color: #fff;
+        }
+	</style>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11453931686"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5484279509355787" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div id="app">
-        <h1>War Room Articles</h1>
-        <div id="metadata" class="metadata">
-            <h2>Collection Info</h2>
-            <!-- Metadata will be inserted here -->
-        </div>
-        
-        <input type="text" id="searchBox" class="search-box" placeholder="Search articles..." onkeyup="filterArticles()">
-        
-        <ul id="articlesList" class="articles-list">
-            <!-- Articles will be inserted here -->
-        </ul>
-    </div>
 
-    <!-- Footer -->
-    <div id="footer">
-        <div class="container">
-            <div class="row">
+<body class="homepage is-preload">
+	<div id="page-wrapper">
 
-                <!-- Tweets -->
-                <section class="col-4 col-12-mobile">
-                    <header>
-                        <h2><span class="label">Natalie Winters</span></h2>
-                    </header>
-                    <br>
-                    <ul class="divided">
-                        <li>
-                            <article class="tweet">
-                                <a href="https://nataliegwinters.com/advertising.html" aria-label="Advertising Options">Advertising Options</a>
-                                <br>
-                                <span class="timestamp">Advertise With Us</span>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="tweet">
-                                <a href="https://nataliegwinters.com/warroom-videos.html"
-                                    aria-label="Natalie Winters News">Warroom Reports</a>
-                                <br>
-                                <span class="timestamp">Warroom News Reports</span>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="tweet">
-                                <a href="https://nataliegwinters.com/about.html"
-                                    aria-label="Natalie Winters About">Natalie Winters</a>
-                                <br>
-                                <span class="timestamp">About Natalie Winters</span>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="tweet">
-                                <a href="https://nataliegwinters.com/images.html" target="_blank" rel="noopener noreferrer"
-                                    aria-label="Natalie Winters On War Room">Natalie Winters Images</a>
-                                <br>
-                                <span class="timestamp">Natalie Winters Pictures</span>
-                            </article>
-                        </li>
-                    </ul>
-                </section>
+		<!-- Header -->
+		<div id="header">
 
-                <!-- Posts -->
-                <section class="col-4 col-12-mobile">
-                    <header>
-                        <h2><span class="label">Info</span></h2>
-                    </header>
-                    <br>
-                    <ul class="divided">
-                        <li>
-                            <article class="post stub">
-                                <header>
-                                    <h3><a href="https://revolver.news/" target="_blank"
-                                            rel="noopener noreferrer">Revolver News</a></h3>
+			<!-- Inner -->
+			<div class="inner">
+				<header>
+					<h1><a href="https://news.nataliegwinters.com/" id="logo">Natalie Winters News</a></h1>
+					<hr />
+					<p>Breaking News & Investigative Reporting</p>
+				</header>
+			</div>
 
-                                </header>
-                                <span class="timestamp">Darren J. Beattie</span>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="post stub">
-                                <header>
-                                    <h3><a href="https://www.joebot.xyz/" target="_blank"
-                                            rel="noopener noreferrer">Joe Bot XYZ</a></h3>
-                                </header>
-                                <span class="timestamp">Joe Allen</span>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="post stub">
-                                <header>
-                                    <h3><a href="https://www.article3project.org/" target="_blank"
-                                            rel="noopener noreferrer">Mike Davis</a></h3>
-                                </header>
-                                <span class="timestamp">The Article III Project</span>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="post stub">
-                                <header>
-                                    <h3>
-                                        <a href="https://www.youtube.com/@NatalieGWinters" target="_blank"
-                                            rel="noopener noreferrer">
-                                            Natalie Gee Winters
-                                        </a>
-                                    </h3>
-                                </header>
-                                <span class="timestamp">OMGEE</span>
-                            </article>
-                        </li>
-                    </ul>
-                </section>
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="https://news.nataliegwinters.com/">Home</a></li>
+					<li><a href="/warroom-index.html">Warroom Index</a></li>
+				</ul>
+			</nav>
+		</div>
 
-                <!-- Photos -->
-                <section class="col-4 col-12-mobile">
-                    <header>
-                        <h2>
-                            <span class="label">Sponsors</span>
-                        </h2>
-                    </header>
-                    <div class="row gtr-25">
-                        <div class="col-6">
-                            <a href="https://warpath.coffee/?ref=nataliegwinters" class="image fit" target="_blank"
-                                rel="noopener noreferrer">
-                                <img src="/assets/images/sponsors/war_path_coffee_logo.jpg" alt="Warpath Coffee" />
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://www.mypillow.com/natalie" class="image fit" target="_blank"
-                                rel="noopener noreferrer">
-                                <img src="/assets/images/sponsors/my_pillow_logo.jpg" alt="My Pillow" />
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://sacredhumanhealth.com/?ref=nataliegwinters" class="image fit" target="_blank"
-                                rel="noopener noreferrer"><img src="/assets/images/sponsors/sacred_human_health_logo.jpg"
-                                    alt="Sacred Human Health" /></a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://meriwetherfarms.com/?ref=nataliegwinters" class="image fit" target="_blank"
-                                rel="noopener noreferrer">
-                                <img src="/assets/images/sponsors/meriwether_farms_logo.jpg" alt="Meriwether Farms" />
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://shessoright.co/?ref=nataliegwinters" class="image fit" target="_blank"
-                                rel="noopener noreferrer"><img src="/assets/images/sponsors/shes_so_right_logo.jpg"
-                                    alt="She So Right" /></a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://sternamerican.com/pages/stand-with-bannon?ref=nataliegwinters" class="image fit"
-                                target="_blank" rel="noopener noreferrer"><img src="/assets/images/sponsors/stand_with_bannon.jpg"
-                                    alt="Stand With Bannon" /></a>
-                        </div>
-                    </div>
-                </section>
+		<div id="app">
+			<h1>War Room Articles</h1>
+			<div id="metadata" class="metadata">
+				<h2>Collection Info</h2>
+				<!-- Metadata will be inserted here -->
+			</div>
+			
+			<input type="text" id="searchBox" class="search-box" placeholder="Search articles..." onkeyup="filterArticles()">
+			
+			<ul id="articlesList" class="articles-list">
+				<!-- Articles will be inserted here -->
+			</ul>
+		</div>
 
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-12">
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
 
-                    <!-- Contact -->
-                    <section class="contact">
-                        <header>
-                            <h3>Natalie Winters Social Media</h3>
-                        </header>
-                        <p>Follow @NatalieGWinters on all platforms & buy her a coffee.</p>
-                        <ul class="icons">
-                            <li><a href="https://x.com/nataliegwinters" target="_blank" rel="noopener noreferrer"
-                                    class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<!-- Tweets -->
+					<section class="col-4 col-12-mobile">
+						<header>
+							<h2><span class="label">Natalie Winters</span></h2>
+						</header>
+						<br>
+						<ul class="divided">
+							<li>
+								<article class="tweet">
+									<a href="https://nataliegwinters.com/advertising.html" aria-label="Advertising Options">Advertising Options</a>
+									<br>
+									<span class="timestamp">Advertise With Us</span>
+								</article>
+							</li>
+							<li>
+								<article class="tweet">
+									<a href="https://nataliegwinters.com/warroom-videos.html"
+										aria-label="Natalie Winters News">Warroom Reports</a>
+									<br>
+									<span class="timestamp">Warroom News Reports</span>
+								</article>
+							</li>
+							<li>
+								<article class="tweet">
+									<a href="https://nataliegwinters.com/about.html"
+										aria-label="Natalie Winters About">Natalie Winters</a>
+									<br>
+									<span class="timestamp">About Natalie Winters</span>
+								</article>
+							</li>
+							<li>
+								<article class="tweet">
+									<a href="https://nataliegwinters.com/images.html" target="_blank" rel="noopener noreferrer"
+										aria-label="Natalie Winters On War Room">Natalie Winters Images</a>
+									<br>
+									<span class="timestamp">Natalie Winters Pictures</span>
+								</article>
+							</li>
+						</ul>
+					</section>
 
-                            <li>
-                                <a href="https://www.instagram.com/nataliegwinters/" target="_blank"
-                                    rel="noopener noreferrer" class="icon">
-                                    <i class="fas fa-mug-hot"></i>
-                                    <span class="label">Instagram</span>
-                                </a>
-                            </li>
+					<!-- Posts -->
+					<section class="col-4 col-12-mobile">
+						<header>
+							<h2><span class="label">Info</span></h2>
+						</header>
+						<br>
+						<ul class="divided">
+							<li>
+								<article class="post stub">
+									<header>
+										<h3><a href="https://revolver.news/" target="_blank"
+												rel="noopener noreferrer">Revolver News</a></h3>
 
-                            <li><a href="https://www.instagram.com/nataliegwinters/" target="_blank"
-                                    rel="noopener noreferrer" class="icon brands fa-instagram"><span
-                                        class="label">Instagram</span></a></li>
-                        </ul>
-                    </section>
+									</header>
+									<span class="timestamp">Darren J. Beattie</span>
+								</article>
+							</li>
+							<li>
+								<article class="post stub">
+									<header>
+										<h3><a href="https://www.joebot.xyz/" target="_blank"
+												rel="noopener noreferrer">Joe Bot XYZ</a></h3>
+									</header>
+									<span class="timestamp">Joe Allen</span>
+								</article>
+							</li>
+							<li>
+								<article class="post stub">
+									<header>
+										<h3><a href="https://www.article3project.org/" target="_blank"
+												rel="noopener noreferrer">Mike Davis</a></h3>
+									</header>
+									<span class="timestamp">The Article III Project</span>
+								</article>
+							</li>
+							<li>
+								<article class="post stub">
+									<header>
+										<h3>
+											<a href="https://www.youtube.com/@NatalieGWinters" target="_blank"
+												rel="noopener noreferrer">
+												Natalie Gee Winters
+											</a>
+										</h3>
+									</header>
+									<span class="timestamp">OMGEE</span>
+								</article>
+							</li>
+						</ul>
+					</section>
 
-                    <!-- Copyright -->
-                    <div class="copyright">
-                        <ul class="menu">
-                            <li>&copy; <a
-                                href="https://app.companiesoffice.govt.nz/companies/app/service/services/documents/EA487ACCCF57D6444298C67F09ECA876/CertIncorporation_9272491_05February2025.pdf"
-                                target="_blank" rel="noopener noreferrer">America First New Zealand</a></li>
-                            <li><a href="https://github.com/meeeeeooooowwwwwww"
-                                target="_blank" rel="noopener noreferrer">Web Design: meeeeeooooowwwwwww</a></li>
-                            <li><a href="https://nataliegwinters.com/sitemap.xml">Natalie Winters Sitemap</a></li>
-                        </ul>
-                    </div>
+					<!-- Photos -->
+					<section class="col-4 col-12-mobile">
+						<header>
+							<h2>
+								<span class="label">Sponsors</span>
+							</h2>
+						</header>
+						<div class="row gtr-25">
+							<div class="col-6">
+								<a href="https://warpath.coffee/?ref=nataliegwinters" class="image fit" target="_blank"
+									rel="noopener noreferrer">
+									<img src="/assets/images/sponsors/war_path_coffee_logo.jpg" alt="Warpath Coffee" />
+								</a>
+							</div>
+							<div class="col-6">
+								<a href="https://www.mypillow.com/natalie" class="image fit" target="_blank"
+									rel="noopener noreferrer">
+									<img src="/assets/images/sponsors/my_pillow_logo.jpg" alt="My Pillow" />
+								</a>
+							</div>
+							<div class="col-6">
+								<a href="https://sacredhumanhealth.com/?ref=nataliegwinters" class="image fit" target="_blank"
+									rel="noopener noreferrer"><img src="/assets/images/sponsors/sacred_human_health_logo.jpg"
+										alt="Sacred Human Health" /></a>
+							</div>
+							<div class="col-6">
+								<a href="https://meriwetherfarms.com/?ref=nataliegwinters" class="image fit" target="_blank"
+									rel="noopener noreferrer">
+									<img src="/assets/images/sponsors/meriwether_farms_logo.jpg" alt="Meriwether Farms" />
+								</a>
+							</div>
+							<div class="col-6">
+								<a href="https://shessoright.co/?ref=nataliegwinters" class="image fit" target="_blank"
+									rel="noopener noreferrer"><img src="/assets/images/sponsors/shes_so_right_logo.jpg"
+										alt="She So Right" /></a>
+							</div>
+							<div class="col-6">
+								<a href="https://sternamerican.com/pages/stand-with-bannon?ref=nataliegwinters" class="image fit"
+									target="_blank" rel="noopener noreferrer"><img src="/assets/images/sponsors/stand_with_bannon.jpg"
+										alt="Stand With Bannon" /></a>
+							</div>
+						</div>
+					</section>
 
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-12">
 
-    <script>
-        let allArticles = [];
+						<!-- Contact -->
+						<section class="contact">
+							<header>
+								<h3>Natalie Winters Social Media</h3>
+							</header>
+							<p>Follow @NatalieGWinters on all platforms & buy her a coffee.</p>
+							<ul class="icons">
+								<li><a href="https://x.com/nataliegwinters" target="_blank" rel="noopener noreferrer"
+										class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 
-        async function loadData() {
-            try {
-                const response = await fetch('warroom-feed.json');
-                const data = await response.json();
-                allArticles = data.articles;
-                displayMetadata(data.metadata);
-                displayArticles(data.articles);
-            } catch (error) {
-                console.error('Error loading data:', error);
-                document.body.innerHTML += `<p style="color: red;">Error loading data: ${error.message}</p>`;
-            }
-        }
+								<li>
+									<a href="https://www.instagram.com/nataliegwinters/" target="_blank"
+										rel="noopener noreferrer" class="icon">
+										<i class="fas fa-mug-hot"></i>
+										<span class="label">Instagram</span>
+									</a>
+								</li>
 
-        function displayMetadata(metadata) {
-            const metadataHtml = `
-                <p><strong>Last Update:</strong> ${metadata.last_update}</p>
-                <p><strong>Total Articles:</strong> ${metadata.total_articles}</p>
-                <p><strong>Unique URLs:</strong> ${metadata.unique_urls}</p>
-            `;
-            document.getElementById('metadata').innerHTML += metadataHtml;
-        }
+								<li><a href="https://www.instagram.com/nataliegwinters/" target="_blank"
+										rel="noopener noreferrer" class="icon brands fa-instagram"><span
+											class="label">Instagram</span></a></li>
+							</ul>
+						</section>
 
-        function displayArticles(articles) {
-            const articlesContainer = document.getElementById('articlesList');
-            articlesContainer.innerHTML = ''; // Clear existing content
-            
-            articles.forEach((article, index) => {
-                const li = document.createElement('li');
-                li.className = 'article-item';
-                
-                // Create article URL for the detail page
-                const articleUrl = `article.html?id=${index}`;
-                
-                li.innerHTML = `
-                    <h2 class="article-title">
-                        <a href="${articleUrl}">${article.title || 'Untitled'}</a>
-                    </h2>
-                    <div class="article-meta">
-                        ${article.published_date ? `<p><strong>Published:</strong> ${article.published_date}</p>` : ''}
-                        ${article.author ? `<p><strong>Author:</strong> ${article.author}</p>` : ''}
-                    </div>
-                    ${article.categories ? `
-                        <div class="categories">
-                            ${article.categories.map(cat => `<span class="category">${cat}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                `;
-                articlesContainer.appendChild(li);
-            });
-        }
+						<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; <a
+									href="https://app.companiesoffice.govt.nz/companies/app/service/services/documents/EA487ACCCF57D6444298C67F09ECA876/CertIncorporation_9272491_05February2025.pdf"
+									target="_blank" rel="noopener noreferrer">America First New Zealand</a></li>
+								<li><a href="https://github.com/meeeeeooooowwwwwww"
+									target="_blank" rel="noopener noreferrer">Web Design: meeeeeooooowwwwwww</a></li>
+								<li><a href="https://nataliegwinters.com/sitemap.xml">Natalie Winters Sitemap</a></li>
+							</ul>
+						</div>
 
-        function filterArticles() {
-            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
-            const filteredArticles = allArticles.filter(article => {
-                const searchText = `${article.title} ${article.author} ${article.content}`.toLowerCase();
-                return searchText.includes(searchTerm);
-            });
-            displayArticles(filteredArticles);
-        }
+					</div>
+				</div>
+			</div>
+		</div>
 
-        // Load data when page loads
-        window.addEventListener('load', loadData);
-    </script>
+		<script>
+			let allArticles = [];
+
+			async function loadData() {
+				try {
+					const response = await fetch('warroom-feed.json');
+					const data = await response.json();
+					allArticles = data.articles;
+					displayMetadata(data.metadata);
+					displayArticles(data.articles);
+				} catch (error) {
+					console.error('Error loading data:', error);
+					document.body.innerHTML += `<p style="color: red;">Error loading data: ${error.message}</p>`;
+				}
+			}
+
+			function displayMetadata(metadata) {
+				const metadataHtml = `
+					<p><strong>Last Update:</strong> ${metadata.last_update}</p>
+					<p><strong>Total Articles:</strong> ${metadata.total_articles}</p>
+					<p><strong>Unique URLs:</strong> ${metadata.unique_urls}</p>
+				`;
+				document.getElementById('metadata').innerHTML += metadataHtml;
+			}
+
+			function displayArticles(articles) {
+				const articlesContainer = document.getElementById('articlesList');
+				articlesContainer.innerHTML = ''; // Clear existing content
+				
+				articles.forEach((article, index) => {
+					const li = document.createElement('li');
+					li.className = 'article-item';
+					
+					// Create article URL for the detail page
+					const articleUrl = `article.html?id=${index}`;
+					
+					li.innerHTML = `
+						<h2 class="article-title">
+							<a href="${articleUrl}">${article.title || 'Untitled'}</a>
+						</h2>
+						<div class="article-meta">
+							${article.published_date ? `<p><strong>Published:</strong> ${article.published_date}</p>` : ''}
+							${article.author ? `<p><strong>Author:</strong> ${article.author}</p>` : ''}
+						</div>
+						${article.categories ? `
+							<div class="categories">
+								${article.categories.map(cat => `<span class="category">${cat}</span>`).join('')}
+							</div>
+						` : ''}
+					`;
+					articlesContainer.appendChild(li);
+				});
+			}
+
+			function filterArticles() {
+				const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+				const filteredArticles = allArticles.filter(article => {
+					const searchText = `${article.title} ${article.author} ${article.content}`.toLowerCase();
+					return searchText.includes(searchTerm);
+				});
+				displayArticles(filteredArticles);
+			}
+
+			// Load data when page loads
+			window.addEventListener('load', loadData);
+		</script>
+		<!-- Scripts -->
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.dropotron.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.scrolly.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.scrollex.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/browser.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/breakpoints.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/util.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/main.js"></script>
+		<script src="https://unpkg.com/navigo@4.4.1/lib/navigo.min.js"></script>
+
+	</div>
 </body>
-</html> 
+
+</html>
