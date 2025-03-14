@@ -405,7 +405,25 @@ body.is-preload .fa-mug-hot:hover:before {
 .inner {
     position: relative;
     z-index: 2;
-    margin-top: 4em;
+    margin-top: 16em;
+}
+
+@media screen and (min-width: 1681px) {
+    .inner {
+        margin-top: 20em;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .inner {
+        margin-top: 12em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .inner {
+        margin-top: 8em;
+    }
 }
 
 .inner header {
@@ -418,13 +436,13 @@ body.is-preload .fa-mug-hot:hover:before {
 }
 
 .inner header h1 a {
-    color: var(--secondary-color);
+    color: var(--text-light) !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 600;
 }
 
 .inner header p {
-    color: #ffffff;
+    color: var(--text-light) !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 500;
     font-size: 1.2em;
