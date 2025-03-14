@@ -29,6 +29,12 @@
 #header {
     background-color: var(--bg-dark);
     border-bottom: 3px solid var(--accent-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 /* Override header background during preload */
@@ -405,24 +411,29 @@ body.is-preload .fa-mug-hot:hover:before {
 .inner {
     position: relative;
     z-index: 2;
-    margin-top: 16em;
+    width: 100%;
+    padding: 0 2em;
+    margin-top: 15vh;
 }
 
 @media screen and (min-width: 1681px) {
     .inner {
-        margin-top: 20em;
+        padding: 0 3em;
+        margin-top: 20vh;
     }
 }
 
 @media screen and (max-width: 980px) {
     .inner {
-        margin-top: 12em;
+        padding: 0 1.5em;
+        margin-top: 12vh;
     }
 }
 
 @media screen and (max-width: 736px) {
     .inner {
-        margin-top: 8em;
+        padding: 0 1em;
+        margin-top: 10vh;
     }
 }
 
