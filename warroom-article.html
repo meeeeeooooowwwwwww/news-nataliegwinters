@@ -204,7 +204,7 @@
 				const urlParams = new URLSearchParams(window.location.search);
 				const articleId = urlParams.get('id');
 				
-				const response = await fetch('warroom-feed.json');
+				const response = await fetch('/warroom-feed.json');
 				const data = await response.json();
 
 				if (!articleId) {
