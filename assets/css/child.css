@@ -301,7 +301,7 @@ hr {
 
 #footer .post.stub .timestamp {
     color: var(--text-light);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Ensure divided list items in footer are transparent */
@@ -839,4 +839,14 @@ ul.icons li:hover {
 
 ul.icons li:active {
     transform: scale(0.98);
+}
+
+#footer .tweet .timestamp {
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+#footer .post.stub .timestamp {
+    color: var(--text-light);
+    opacity: 0.9;
 } 
