@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Room Articles Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .metadata {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .articles-list {
+            list-style: none;
+            padding: 0;
+        }
+        .article-item {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .article-title {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .article-title a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        .article-meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .category {
+            background: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>War Room Articles</h1>
+        <div id="metadata" class="metadata">
+            <h2>Collection Info</h2>
+            <!-- Metadata will be inserted here -->
+        </div>
+        
+        <input type="text" id="searchBox" class="search-box" placeholder="Search articles..." onkeyup="filterArticles()">
+        
+        <ul id="articlesList" class="articles-list">
+            <!-- Articles will be inserted here -->
+        </ul>
+    </div>
+
+    <script>
+        let allArticles = [];
+
+        async function loadData() {
+            try {
+                const response = await fetch('warroom-feed.json');
+                const data = await response.json();
+                allArticles = data.articles;
+                displayMetadata(data.metadata);
+                displayArticles(data.articles);
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.body.innerHTML += `<p style="color: red;">Error loading data: ${error.message}</p>`;
+            }
+        }
+
+        function displayMetadata(metadata) {
+            const metadataHtml = `
+                <p><strong>Last Update:</strong> ${metadata.last_update}</p>
+                <p><strong>Total Articles:</strong> ${metadata.total_articles}</p>
+                <p><strong>Unique URLs:</strong> ${metadata.unique_urls}</p>
+            `;
+            document.getElementById('metadata').innerHTML += metadataHtml;
+        }
+
+        function displayArticles(articles) {
+            const articlesContainer = document.getElementById('articlesList');
+            articlesContainer.innerHTML = ''; // Clear existing content
+            
+            articles.forEach((article, index) => {
+                const li = document.createElement('li');
+                li.className = 'article-item';
+                
+                // Create article URL for the detail page
+                const articleUrl = `article.html?id=${index}`;
+                
+                li.innerHTML = `
+                    <h2 class="article-title">
+                        <a href="${articleUrl}">${article.title || 'Untitled'}</a>
+                    </h2>
+                    <div class="article-meta">
+                        ${article.published_date ? `<p><strong>Published:</strong> ${article.published_date}</p>` : ''}
+                        ${article.author ? `<p><strong>Author:</strong> ${article.author}</p>` : ''}
+                    </div>
+                    ${article.categories ? `
+                        <div class="categories">
+                            ${article.categories.map(cat => `<span class="category">${cat}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                `;
+                articlesContainer.appendChild(li);
+            });
+        }
+
+        function filterArticles() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const filteredArticles = allArticles.filter(article => {
+                const searchText = `${article.title} ${article.author} ${article.content}`.toLowerCase();
+                return searchText.includes(searchTerm);
+            });
+            displayArticles(filteredArticles);
+        }
+
+        // Load data when page loads
+        window.addEventListener('load', loadData);
+    </script>
+</body>
+</html> 

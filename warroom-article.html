@@ -1,0 +1,594 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>War Room Article</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/fontawesome-all.min.css" />
+	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="/assets/css/child.css" />
+	<style>
+		#header {
+			background-image: url('/assets/images/header.png') !important;
+			background-size: cover;
+			background-position: top center;
+		}
+        .article-meta {
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 2em 0;
+        }
+        .article-content iframe {
+            width: 100%;
+            min-height: 400px;
+            margin: 2em 0;
+        }
+        .article-content blockquote {
+            border-left: 4px solid #4a4a4a;
+            padding-left: 1em;
+            margin: 1em 0;
+            font-style: italic;
+        }
+        .watch-section {
+            font-size: 0.9em;
+        }
+        .watch-section ul {
+            margin: 0.5em 0 1.5em 0;
+        }
+        .watch-section li {
+            margin: 0.5em 0;
+        }
+        .watch-section i {
+            width: 20px;
+            margin-right: 8px;
+            text-align: center;
+        }
+        .hashtag {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 0.2em 0.6em;
+            margin: 0 0.3em;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #fff;
+        }
+        .watch-section a {
+            border-bottom: 1px dotted rgba(255,255,255,0.35);
+        }
+        .watch-section a:hover {
+            border-bottom-color: #fff;
+            color: #fff;
+        }
+	</style>
+</head>
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1>War Room Articles</h1>
+			<p>Latest updates and coverage</p>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li>
+					<a href="#">Home</a>
+					<ul>
+						<li><a href="#">Featured Stories</a>
+							<ul>
+								<li><a href="#">Top Stories</a></li>
+								<li><a href="#">Breaking News</a></li>
+								<li><a href="#">Special Reports</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Latest Updates</a>
+							<ul>
+								<li><a href="#">Daily Briefing</a></li>
+								<li><a href="#">Weekly Roundup</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">News</a>
+					<ul>
+						<li><a href="#">Politics</a>
+							<ul>
+								<li><a href="#">National</a></li>
+								<li><a href="#">International</a></li>
+								<li><a href="#">Elections</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Economy</a>
+							<ul>
+								<li><a href="#">Markets</a></li>
+								<li><a href="#">Business</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Culture</a>
+							<ul>
+								<li><a href="#">Society</a></li>
+								<li><a href="#">Media</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Advertising</a>
+					<ul>
+						<li><a href="#">Sponsorship</a>
+							<ul>
+								<li><a href="#">Premium</a></li>
+								<li><a href="#">Standard</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Media Kit</a>
+							<ul>
+								<li><a href="#">Rates</a></li>
+								<li><a href="#">Demographics</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">About</a>
+					<ul>
+						<li><a href="#">Our Team</a>
+							<ul>
+								<li><a href="#">Leadership</a></li>
+								<li><a href="#">Contributors</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Mission</a>
+							<ul>
+								<li><a href="#">Values</a></li>
+								<li><a href="#">History</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+					<ul>
+						<li><a href="#">General Inquiries</a>
+							<ul>
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Feedback</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Press</a>
+							<ul>
+								<li><a href="#">Media Relations</a></li>
+								<li><a href="#">Press Kit</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- Article Content -->
+			<section class="post">
+				<div id="article-container">
+					<!-- Article content will be dynamically inserted here -->
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/browser.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/breakpoints.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/util.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/meeeeeooooowwwwwww/nataliegwinters@main/assets/js/jquery.dropotron.min.js"></script>
+
+	<script>
+		async function loadArticle() {
+			try {
+				const urlParams = new URLSearchParams(window.location.search);
+				const articleId = urlParams.get('id');
+				
+				const response = await fetch('warroom-feed.json');
+				const data = await response.json();
+
+				if (!articleId) {
+					displayArticleList(data.articles);
+					return;
+				}
+
+				const article = data.articles[articleId];
+				
+				if (!article) {
+					throw new Error('Article not found');
+				}
+
+				displayArticle(article);
+				document.title = `${article.title} - War Room`;
+				
+			} catch (error) {
+				console.error('Error loading article:', error);
+				document.getElementById('article-container').innerHTML = `
+					<header class="major">
+						<h2>Error</h2>
+						<p>${error.message}</p>
+					</header>
+				`;
+			}
+		}
+
+		function displayArticleList(articles) {
+			const container = document.getElementById('article-container');
+			
+			container.innerHTML = `
+				<header class="major">
+					<h1>Latest Articles</h1>
+				</header>
+				<div class="posts">
+					${articles.map((article, index) => `
+						<article>
+							${article.featured_image ? `
+								<a href="warroom-article.html?id=${index}" class="image fit">
+									<img src="${article.featured_image.src}" alt="${article.title}">
+								</a>
+							` : ''}
+							<header>
+								<h2><a href="warroom-article.html?id=${index}">${article.title}</a></h2>
+								${article.published_date ? `<p class="date">${article.published_date}</p>` : ''}
+							</header>
+							${article.categories ? `
+								<p class="categories">
+									<strong>Categories:</strong> ${article.categories.join(', ')}
+								</p>
+							` : ''}
+							<ul class="actions special">
+								<li><a href="warroom-article.html?id=${index}" class="button">Read More</a></li>
+							</ul>
+						</article>
+					`).join('')}
+				</div>
+			`;
+
+			document.title = 'Latest Articles - War Room';
+		}
+
+		function displayArticle(article) {
+			const container = document.getElementById('article-container');
+			
+			// Back to Articles button at top
+			container.innerHTML = `
+				<div class="article-nav" style="margin-bottom: 2em;">
+					<a href="warroom-article.html" class="button small">← Back to Articles</a>
+				</div>
+			`;
+			
+			// Header section
+			container.innerHTML += `
+				<header class="major">
+					<h1>${article.title || 'Untitled'}</h1>
+					<div class="article-meta">
+						${article.author ? `<p><strong>By:</strong> ${article.author}</p>` : ''}
+						${article.published_date ? `<p><strong>Published:</strong> ${article.published_date}</p>` : ''}
+						${article.categories ? `
+							<p><strong>Categories:</strong> ${article.categories.join(', ')}</p>
+						` : ''}
+						<p><strong>Source:</strong> <a href="${article.url}" target="_blank">Original Article</a></p>
+					</div>
+				</header>
+			`;
+
+			// Featured image
+			if (article.featured_image) {
+				container.innerHTML += `
+					<div class="image main">
+						<img src="${article.featured_image.src}" alt="Featured Image">
+					</div>
+				`;
+			}
+
+			// Main content
+			if (article.ordered_content) {
+				const contentDiv = document.createElement('div');
+				contentDiv.className = 'article-content';
+				
+				article.ordered_content.forEach(item => {
+					// Filter out the watch section text if it exists in the content
+					if (item.type === 'paragraph' && 
+						(item.html.includes('Watch War Room:') || 
+						 item.html.includes('On the Web:') || 
+						 item.html.includes('On Gettr:') ||
+						 item.html.includes('On X:') ||
+						 item.html.includes('On Podcast:') ||
+						 item.html.includes('On TV:'))) {
+						return;
+					}
+					
+					switch(item.type) {
+						case 'paragraph':
+						case 'heading':
+						case 'quote':
+						case 'list':
+							contentDiv.innerHTML += item.html;
+							break;
+						case 'embedded_media':
+							contentDiv.innerHTML += `
+								<div class="video-container">
+									${item.html}
+								</div>
+							`;
+							break;
+						case 'image':
+							contentDiv.innerHTML += `
+								<div class="image fit">
+									<img src="${item.src}" alt="">
+								</div>
+							`;
+							break;
+					}
+				});
+				
+				container.appendChild(contentDiv);
+			}
+
+			// Add Watch section
+			const watchSection = document.createElement('div');
+			watchSection.className = 'watch-section';
+			watchSection.innerHTML = `
+				<div style="margin-top: 3em; padding: 2em; background: rgba(0,0,0,0.1); border-radius: 4px;">
+					<h3>Watch War Room:</h3>
+					<div class="watch-links" style="margin-top: 1em;">
+						<p><strong>On the Web:</strong> <a href="https://www.warroom.org" target="_blank" rel="noopener noreferrer">warroom.org</a></p>
+						
+						<p><strong>Social Media:</strong></p>
+						<ul style="list-style-type: none; padding-left: 1em;">
+							<li><i class="fab fa-gettr"></i> <a href="https://gettr.com/user/WarRoom" target="_blank" rel="noopener noreferrer">@WarRoom on GETTR</a></li>
+							<li><i class="fab fa-twitter"></i> <a href="https://twitter.com/Bannons_WarRoom" target="_blank" rel="noopener noreferrer">@Bannons_WarRoom on X</a></li>
+						</ul>
+						
+						<p><strong>Listen on Podcast:</strong></p>
+						<ul style="list-style-type: none; padding-left: 1em;">
+							<li><i class="fab fa-apple"></i> <a href="https://podcasts.apple.com/us/podcast/war-room-pandemic/id1485351658" target="_blank" rel="noopener noreferrer">Apple Podcasts</a></li>
+							<li><i class="fas fa-broadcast-tower"></i> <a href="https://www.iheart.com/podcast/256-war-room-pandemic-31099121/" target="_blank" rel="noopener noreferrer">iHeart Radio</a></li>
+							<li><i class="fab fa-google"></i> <a href="https://podcasts.google.com/feed/aHR0cHM6Ly93YXJyb29tLm9yZy9mZWVkL3BvZGNhc3Qv" target="_blank" rel="noopener noreferrer">Google Podcasts</a></li>
+						</ul>
+						
+						<p><strong>Watch on TV:</strong></p>
+						<ul style="list-style-type: none; padding-left: 1em;">
+							<li><i class="fas fa-tv"></i> PlutoTV Channel 240</li>
+							<li><i class="fas fa-satellite-dish"></i> Dish Channel 219</li>
+							<li><i class="fas fa-tv"></i> Roku</li>
+							<li><i class="fab fa-apple"></i> Apple TV</li>
+							<li><i class="fab fa-amazon"></i> FireTV</li>
+							<li><i class="fas fa-globe"></i> <a href="https://AmericasVoice.news" target="_blank" rel="noopener noreferrer">AmericasVoice.news</a></li>
+						</ul>
+						
+						<p style="margin-top: 1em;">
+							<span class="hashtag">#news</span>
+							<span class="hashtag">#politics</span>
+							<span class="hashtag">#realnews</span>
+						</p>
+					</div>
+				</div>
+			`;
+			container.appendChild(watchSection);
+
+			// Back to Articles button at bottom
+			const bottomNav = document.createElement('div');
+			bottomNav.className = 'article-nav';
+			bottomNav.style = 'margin-top: 2em; text-align: center;';
+			bottomNav.innerHTML = `<a href="warroom-article.html" class="button small">← Back to Articles</a>`;
+			container.appendChild(bottomNav);
+		}
+
+		// Load article when page loads
+		window.addEventListener('load', loadArticle);
+	</script>
+
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+
+					<!-- Tweets -->
+					<section class="col-4 col-12-mobile">
+						<header>
+							<h2><span class="label">Natalie Winters</span></h2>
+						</header>
+						<br>
+						<ul class="divided">
+							<li>
+								<article class="tweet">
+									<a href="advertising.html" aria-label="Advertising Options">Advertising Options</a>
+									<br>
+									<span class="timestamp">Advertise With Us</span>
+								</article>
+							</li>
+							<li>
+								<article class="tweet">
+									<a href="warroom-videos.html"
+										aria-label="Natalie Winters News">Warroom Reports</a>
+									<br>
+									<span class="timestamp">Warroom News Reports</span>
+								</article>
+							</li>
+							<li>
+								<article class="tweet">
+									<a href="about.html"
+										aria-label="Natalie Winters About">Natalie Winters</a>
+									<br>
+									<span class="timestamp">About Natalie Winters</span>
+								</article>
+							</li>
+							<li>
+								<article class="tweet">
+									<a href="images.html" target="_blank" rel="noopener noreferrer"
+										aria-label="Natalie Winters On War Room">Natalie Winters Images</a>
+									<br>
+									<span class="timestamp">Natalie Winters Pictures</span>
+								</article>
+							</li>
+						</ul>
+					</section>
+
+					<!-- Posts -->
+					<section class="col-4 col-12-mobile">
+						<header>
+							<h2><span class="label">Info</span></h2>
+						</header>
+						<br>
+						<ul class="divided">
+							<li>
+								<article class="post stub">
+									<header>
+										<h3><a href="https://revolver.news/" target="_blank"
+												rel="noopener noreferrer">Revolver News</a></h3>
+
+									</header>
+									<span class="timestamp">Darren J. Beattie</span>
+								</article>
+							</li>
+							<li>
+								<article class="post stub">
+									<header>
+										<h3><a href="https://www.joebot.xyz/" target="_blank"
+												rel="noopener noreferrer">Joe Bot XYZ</a></h3>
+									</header>
+									<span class="timestamp">Joe Allen</span>
+								</article>
+							</li>
+							<li>
+								<article class="post stub">
+									<header>
+										<h3><a href="https://www.article3project.org/" target="_blank"
+												rel="noopener noreferrer">Mike Davis</a></h3>
+									</header>
+									<span class="timestamp">The Article III Project</span>
+								</article>
+							</li>
+							<li>
+								<article class="post stub">
+									<header>
+										<h3>
+											<a href="https://www.youtube.com/@NatalieGWinters" target="_blank"
+												rel="noopener noreferrer">
+												Natalie Gee Winters
+											</a>
+										</h3>
+									</header>
+									<span class="timestamp">OMGEE</span>
+								</article>
+							</li>
+						</ul>
+					</section>
+
+					<!-- Photos -->
+					<section class="col-4 col-12-mobile">
+						<header>
+							<h2>
+								<span class="label">Sponsors</span>
+							</h2>
+						</header>
+						<div class="row gtr-25">
+							<div class="col-6">
+								<a href="https://warpath.coffee/" class="image fit" target="_blank"
+									rel="noopener noreferrer">
+									<img src="images/war_path_coffee_logo.jpg" alt="Warpath Coffee" />
+								</a>
+							</div>
+							<div class="col-6">
+								<a href="https://www.mypillow.com/" class="image fit" target="_blank"
+									rel="noopener noreferrer">
+									<img src="images/my_pillow_logo.jpg" alt="My Pillow" />
+								</a>
+							</div>
+							<div class="col-6">
+								<a href="https://sacredhumanhealth.com/" class="image fit" target="_blank"
+									rel="noopener noreferrer"><img src="images/sacred_human_health_logo.jpg"
+										alt="Sacred Human Health" /></a>
+							</div>
+							<div class="col-6">
+								<a href="https://meriwetherfarms.com/" class="image fit" target="_blank"
+									rel="noopener noreferrer">
+									<img src="images/meriwether_farms_logo.jpg" alt="Meriwether Farms" />
+								</a>
+							</div>
+							<div class="col-6">
+								<a href="https://shessoright.co/" class="image fit" target="_blank"
+									rel="noopener noreferrer"><img src="images/shes_so_right_logo.jpg"
+										alt="She So Right" /></a>
+							</div>
+							<div class="col-6">
+								<a href="https://sternamerican.com/pages/stand-with-bannon" class="image fit"
+									target="_blank" rel="noopener noreferrer"><img src="images/stand_with_bannon.jpg"
+										alt="Stand With Bannon" /></a>
+							</div>
+						</div>
+					</section>
+
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-12">
+
+						<!-- Contact -->
+						<section class="contact">
+							<header>
+								<h3>Natalie Winters Social Media</h3>
+							</header>
+							<p>Follow @NatalieGWinters on all platforms & buy her a coffee.</p>
+							<ul class="icons">
+								<li><a href="https://x.com/nataliegwinters" target="_blank" rel="noopener noreferrer"
+										class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+
+								<li>
+									<a href="https://www.instagram.com/nataliegwinters/" target="_blank"
+										rel="noopener noreferrer" class="icon">
+										<i class="fas fa-mug-hot"></i>
+										<span class="label">Instagram</span>
+									</a>
+								</li>
+
+								<li><a href="https://www.instagram.com/nataliegwinters/" target="_blank"
+										rel="noopener noreferrer" class="icon brands fa-instagram"><span
+											class="label">Instagram</span></a></li>
+							</ul>
+						</section>
+
+						<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<ul class="menu">
+									<li>&copy; <a
+										href="https://app.companiesoffice.govt.nz/companies/app/service/services/documents/EA487ACCCF57D6444298C67F09ECA876/CertIncorporation_9272491_05February2025.pdf"
+										target="_blank" rel="noopener noreferrer"
+										alt="America First Limited, New Zealand">
+										America First New Zealand</a>
+									</li>
+									<li><a href="https://github.com/meeeeeooooowwwwwww"
+									target="_blank" rel="noopener noreferrer">Web Design: meeeeeooooowwwwwww</a></li>
+									<li><a href="https://nataliegwinters.com/sitemap.xml">Natalie Winters Sitemap</a></li>
+								</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
