@@ -1,6 +1,6 @@
 # Route all paths through index.html for client-side routing
 /assets/js/articles.js* /assets/js/app.js 301
 /warroom-feed.json /warroom-feed.json 200  # Explicitly allow direct access
-/warroom-articles/* /index.html 200
-/article/*          /index.html 200
+/article.html* /warroom-article.html 200  # Handle article pages
+/warroom-index.html /warroom-index.html 200  # Handle article list
 /*                  /index.html 200
