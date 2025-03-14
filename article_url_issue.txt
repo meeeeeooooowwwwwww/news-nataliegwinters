@@ -1,0 +1,160 @@
+# Article URL Handling Issue Analysis
+
+## Problem Description
+When clicking the "read more" button on the warroom-articles page (https://news.nataliegwinters.com/warroom-articles), the URL changes to https://news.nataliegwinters.com/article but shows "Article Not Found" instead of displaying the article content. The URL handling between the article list and individual article pages appears to be broken.
+
+## Relevant Files and Code
+
+### 1. URL Redirect Configuration (_redirects)
+```
+/warroom-articles/* /article.html 200
+```
+This redirects all /warroom-articles/* paths to article.html while preserving the URL.
+
+### 2. Article List Generation (assets/js/articles.js)
+```javascript
+function generateSlug(title) {
+    return title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+function getArticleUrl(slug) {
+    // Use clean URLs in production, query parameters in development
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return `/article.html?id=${encodeURIComponent(slug)}`;
+    } else {
+        return `/warroom-articles/${encodeURIComponent(slug)}`;
+    }
+}
+
+function renderArticles(articles) {
+    // ... other code ...
+    articlesToShow.forEach(article => {
+        const slug = generateSlug(article.title);
+        const articleElement = document.createElement('div');
+        articleElement.innerHTML = `
+            <h3>${article.title}</h3>
+            <div class="date">${date}</div>
+            <p>${excerpt}...</p>
+            <a href="${getArticleUrl(slug)}" class="read-more">read more <em>→</em></a>
+        `;
+        // ... other code ...
+    });
+}
+```
+
+### 3. Article Page Loading (assets/js/article.js)
+```javascript
+function generateSlug(title) {
+    return title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+function getArticleId() {
+    // Check for query parameter first (development)
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryId = urlParams.get('id');
+    if (queryId) {
+        console.log('Found article ID from query parameter:', queryId);
+        return decodeURIComponent(queryId);
+    }
+
+    // Check for clean URL format (production)
+    const pathname = window.location.pathname;
+    console.log('Current pathname:', pathname);
+    
+    // Match either /warroom-articles/slug or /article/slug
+    const match = pathname.match(/\/(warroom-articles|article)\/(.+)/);
+    if (match) {
+        console.log('Found article ID from URL:', match[2]);
+        return decodeURIComponent(match[2]);
+    }
+    
+    console.log('No article ID found in URL or query parameters');
+    return null;
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const articleId = getArticleId();
+        if (!articleId) {
+            throw new Error('Article not found');
+        }
+
+        // Load the articles JSON
+        const response = await fetch('/warroom-articles.json');
+        const articles = await response.json();
+        
+        // Find the article by matching its slug
+        const article = articles.find(a => generateSlug(a.title) === articleId);
+        
+        if (!article) {
+            throw new Error('Article not found');
+        }
+
+        // Render article content...
+    } catch (error) {
+        // Show error message...
+    }
+});
+```
+
+### 4. Article HTML Template (article.html)
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Article - Natalie Winters</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- ... other meta tags and styles ... -->
+</head>
+<body class="article is-preload">
+    <div id="page-wrapper">
+        <article id="main">
+            <div id="article-content">
+                <!-- Article content will be dynamically loaded -->
+            </div>
+        </article>
+    </div>
+    <!-- ... scripts ... -->
+    <script src="/assets/js/article.js"></script>
+</body>
+</html>
+```
+
+## URL Flow Analysis
+1. On the articles list page (/warroom-articles):
+   - Articles are loaded from warroom-articles.json
+   - For each article, a slug is generated from its title
+   - "Read more" links are created with format: /warroom-articles/[slug]
+
+2. When clicking "read more":
+   - Browser navigates to /warroom-articles/[slug]
+   - _redirects rule sends this to article.html
+   - article.js tries to extract the article ID/slug
+   - Attempts to load and match article from warroom-articles.json
+
+## Potential Issues
+1. URL Pattern Mismatch:
+   - The _redirects rule changes /warroom-articles/* to /article.html
+   - This might be causing the pathname to be /article instead of preserving the full path
+
+2. Slug Generation:
+   - Need to verify that the same slug generation logic is used in both articles.js and article.js
+   - Need to ensure URL encoding/decoding is handled consistently
+
+3. JSON Data Access:
+   - Need to verify warroom-articles.json is accessible and loading correctly
+   - Need to confirm the article slugs match between the URL and JSON data
+
+## Testing Steps
+1. Console log the pathname in article.js to see what URL format is received
+2. Verify the article ID extraction from both URL formats
+3. Check if warroom-articles.json loads successfully
+4. Compare generated slugs with the actual URLs
+5. Test both development (query parameter) and production (clean URL) formats 
