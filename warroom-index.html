@@ -48,48 +48,6 @@
 			background-size: cover;
 			background-position: top center;
 		}
-        .article-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .article-item {
-            margin-bottom: 2em;
-            padding-bottom: 1em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .article-meta {
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 0.5em;
-        }
-        .article-title {
-            margin: 0 0 0.5em 0;
-        }
-        .article-title a {
-            color: #fff;
-            text-decoration: none;
-            border-bottom: none;
-        }
-        .article-title a:hover {
-            color: #e44c65;
-        }
-        .article-excerpt {
-            margin-bottom: 1em;
-        }
-        .read-more {
-            display: inline-block;
-            background: #e44c65;
-            color: #fff;
-            padding: 0.5em 1em;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-        }
-        .read-more:hover {
-            background: #d93d57;
-            color: #fff;
-        }
 	</style>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11453931686"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5484279509355787" crossorigin="anonymous"></script>
@@ -120,17 +78,26 @@
 		</div>
 
 		<div id="app">
-			<h1>War Room Articles</h1>
-			<div id="metadata" class="metadata">
-				<h2>Collection Info</h2>
-				<!-- Metadata will be inserted here -->
+			<div class="wrapper">
+				<div class="container">
+					<header class="major">
+						<h2>War Room Articles</h2>
+					</header>
+					
+					<div id="metadata" class="metadata">
+						<h3>Collection Info</h3>
+						<!-- Metadata will be inserted here -->
+					</div>
+					
+					<div class="search-container">
+						<input type="text" id="searchBox" class="search-box" placeholder="Search articles..." onkeyup="filterArticles()">
+					</div>
+					
+					<div id="articlesList" class="article-list">
+						<!-- Articles will be inserted here -->
+					</div>
+				</div>
 			</div>
-			
-			<input type="text" id="searchBox" class="search-box" placeholder="Search articles..." onkeyup="filterArticles()">
-			
-			<ul id="articlesList" class="articles-list">
-				<!-- Articles will be inserted here -->
-			</ul>
 		</div>
 
 		<!-- Footer -->
@@ -332,7 +299,11 @@
 					displayArticles(data.articles);
 				} catch (error) {
 					console.error('Error loading data:', error);
-					document.body.innerHTML += `<p style="color: red;">Error loading data: ${error.message}</p>`;
+					document.getElementById('articlesList').innerHTML = `
+						<div class="no-articles">
+							Error loading articles: ${error.message}
+						</div>
+					`;
 				}
 			}
 
@@ -347,31 +318,29 @@
 
 			function displayArticles(articles) {
 				const articlesContainer = document.getElementById('articlesList');
-				articlesContainer.innerHTML = ''; // Clear existing content
 				
-				articles.forEach((article, index) => {
-					const li = document.createElement('li');
-					li.className = 'article-item';
-					
-					// Create article URL for the detail page
+				if (!articles || articles.length === 0) {
+					articlesContainer.innerHTML = '<div class="no-articles">No articles found</div>';
+					return;
+				}
+				
+				articlesContainer.innerHTML = articles.map((article, index) => {
 					const articleUrl = `warroom-article.html?id=${index}`;
+					const excerpt = article.content ? article.content.substring(0, 150) + '...' : '';
 					
-					li.innerHTML = `
-						<h2 class="article-title">
-							<a href="${articleUrl}">${article.title || 'Untitled'}</a>
-						</h2>
-						<div class="article-meta">
-							${article.published_date ? `<p><strong>Published:</strong> ${article.published_date}</p>` : ''}
-							${article.author ? `<p><strong>Author:</strong> ${article.author}</p>` : ''}
-						</div>
-						${article.categories ? `
-							<div class="categories">
-								${article.categories.map(cat => `<span class="category">${cat}</span>`).join('')}
+					return `
+						<article class="article-card">
+							<h3>
+								<a href="${articleUrl}">${article.title || 'Untitled'}</a>
+							</h3>
+							${article.published_date ? `<span class="date">${article.published_date}</span>` : ''}
+							<div class="excerpt">
+								${excerpt}
 							</div>
-						` : ''}
+							<a href="${articleUrl}" class="read-more">Read Article</a>
+						</article>
 					`;
-					articlesContainer.appendChild(li);
-				});
+				}).join('');
 			}
 
 			function filterArticles() {
