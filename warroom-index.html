@@ -80,19 +80,6 @@
 		<div id="app">
 			<div class="wrapper">
 				<div class="container">
-					<header class="major">
-						<h2>War Room Articles</h2>
-					</header>
-					
-					<div id="metadata" class="metadata">
-						<h3>Collection Info</h3>
-						<!-- Metadata will be inserted here -->
-					</div>
-					
-					<div class="search-container">
-						<input type="text" id="searchBox" class="search-box" placeholder="Search articles..." onkeyup="filterArticles()">
-					</div>
-					
 					<div id="articlesList" class="article-list">
 						<!-- Articles will be inserted here -->
 					</div>
@@ -294,33 +281,31 @@
 				try {
 					const response = await fetch('warroom-feed.json');
 					const data = await response.json();
+					if (!data.articles || data.articles.length === 0) {
+						document.getElementById('articlesList').innerHTML = `
+							<div class="no-articles">
+								Articles are being updated. Please check back soon.
+							</div>
+						`;
+						return;
+					}
 					allArticles = data.articles;
-					displayMetadata(data.metadata);
-					displayArticles(data.articles);
+					displayArticles(allArticles);
 				} catch (error) {
 					console.error('Error loading data:', error);
 					document.getElementById('articlesList').innerHTML = `
 						<div class="no-articles">
-							Error loading articles: ${error.message}
+							Articles are being updated. Please check back soon.
 						</div>
 					`;
 				}
-			}
-
-			function displayMetadata(metadata) {
-				const metadataHtml = `
-					<p><strong>Last Update:</strong> ${metadata.last_update}</p>
-					<p><strong>Total Articles:</strong> ${metadata.total_articles}</p>
-					<p><strong>Unique URLs:</strong> ${metadata.unique_urls}</p>
-				`;
-				document.getElementById('metadata').innerHTML += metadataHtml;
 			}
 
 			function displayArticles(articles) {
 				const articlesContainer = document.getElementById('articlesList');
 				
 				if (!articles || articles.length === 0) {
-					articlesContainer.innerHTML = '<div class="no-articles">No articles found</div>';
+					articlesContainer.innerHTML = '<div class="no-articles">Articles are being updated. Please check back soon.</div>';
 					return;
 				}
 				
@@ -341,15 +326,6 @@
 						</article>
 					`;
 				}).join('');
-			}
-
-			function filterArticles() {
-				const searchTerm = document.getElementById('searchBox').value.toLowerCase();
-				const filteredArticles = allArticles.filter(article => {
-					const searchText = `${article.title} ${article.author} ${article.content}`.toLowerCase();
-					return searchText.includes(searchTerm);
-				});
-				displayArticles(filteredArticles);
 			}
 
 			// Load data when page loads
