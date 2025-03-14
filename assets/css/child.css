@@ -6,6 +6,7 @@
     --primary-color: #1E3A8A;          /* Trustworthy Blue - main brand color */
     --secondary-color: #60A5FA;        /* Soft Sky Blue - friendly accent */
     --accent-color: #2DD4BF;           /* Playful Teal - fun elements */
+    --baby-blue: #E3F2FD;             /* Baby Blue - warroom background */
     
     /* Text Colors */
     --text-primary: #1F2937;           /* Dark Gray - main text */
@@ -111,10 +112,31 @@ body.homepage.is-preload #header:after {
 }
 
 /* Main Content */
-.wrapper.style2 {
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+.wrapper.style2,
+.wrapper,
+#content,
+#app .wrapper,
+#app .container,
+.article-list,
+#main {
+    background-color: var(--baby-blue);
+}
+
+/* Ensure content containers maintain white background */
+.post,
+.article-card {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover,
+.article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 article header h2 {
@@ -200,22 +222,6 @@ p a:hover {
     padding: 0.4em 0.8em;
     border-radius: 4px;
     transition: all 0.3s ease;
-}
-
-/* Post Styles */
-.post {
-    border: 1px solid var(--border-light);
-    padding: 1.2em;
-    margin-bottom: 1.5em;
-    background: var(--bg-primary);
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.post:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .post header h3 a {
@@ -652,4 +658,167 @@ h2 span.label {
 .article-title a:hover {
     color: var(--accent-color);
     transform: translateX(2px);
+}
+
+/* Article List Container */
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2em;
+    padding: 2em;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Article Card Styles */
+.article-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 1.8em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
+}
+
+.article-card h3 {
+    margin: 0 0 0.8em 0;
+    font-size: clamp(1.2em, 2vw, 1.6em);
+    line-height: 1.4;
+    color: var(--primary-color);
+}
+
+.article-card h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.article-card h3 a:hover {
+    color: var(--accent-color);
+}
+
+.article-card .date {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+.article-card .excerpt {
+    color: var(--text-primary);
+    margin-bottom: 1.5em;
+    flex-grow: 1;
+    font-size: clamp(0.9em, 1.5vw, 1em);
+    line-height: 1.6;
+}
+
+.article-card .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.article-card .read-more:hover {
+    color: var(--primary-color);
+    gap: 0.8em;
+}
+
+.article-card .read-more::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.article-card .read-more:hover::after {
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 980px) {
+    .article-list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 1.5em;
+        gap: 1.5em;
+    }
+    
+    .article-card {
+        padding: 1.5em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .article-list {
+        grid-template-columns: 1fr;
+        padding: 1em;
+        gap: 1em;
+    }
+    
+    .article-card {
+        padding: 1.2em;
+    }
+    
+    .article-card h3 {
+        font-size: 1.3em;
+    }
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 2em;
+    color: var(--text-secondary);
+    font-style: italic;
+    grid-column: 1 / -1;
+}
+
+/* Empty state */
+.no-articles {
+    text-align: center;
+    padding: 3em;
+    color: var(--text-secondary);
+    grid-column: 1 / -1;
+    font-style: italic;
+}
+
+/* Warroom Index Styles */
+#app .wrapper {
+    background-color: var(--baby-blue);
+    padding: 2em 0;
+}
+
+#app .container {
+    background-color: var(--baby-blue);
+}
+
+.article-list {
+    background-color: var(--baby-blue);
+}
+
+.article-card {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 } 
